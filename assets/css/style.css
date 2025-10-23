@@ -1,27 +1,44 @@
-
-
+/* =========================
+   Form Controls
+   ========================= */
 .form-control-dark {
   border-color: var(--bs-gray);
 }
+
 .form-control-dark:focus {
   border-color: #fff;
   box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
 }
 
+/* =========================
+   Texto e Tipografia
+   ========================= */
 .text-small {
   font-size: 85%;
 }
 
+/* Corrigindo múltiplas classes combinadas */
+.pt-5.mt-5.mb-4.display-6.lh-1.fw-bold {
+  color: white;
+}
+
+/* =========================
+   Dropdown
+   ========================= */
 .dropdown-toggle:not(:focus) {
   outline: 0;
 }
 
+/* =========================
+   Ícones e Cards
+   ========================= */
 .feature-icon {
   width: 4rem;
   height: 4rem;
   border-radius: .75rem;
 }
 
+.feature-icon-small,
 .icon-square {
   width: 3rem;
   height: 3rem;
@@ -38,11 +55,158 @@
   background-size: cover;
 }
 
-.feature-icon-small {
-  width: 3rem;
-  height: 3rem;
-}
-
+/* =========================
+   Responsividade
+   ========================= */
 @media (min-width: 992px) {
   .rounded-lg-3 { border-radius: .3rem; }
+}
+
+/* =========================
+   Body e Background
+   ========================= */
+body {
+  background: linear-gradient(180deg, #ffffff 50%, #631616);
+  color: white;
+  border: none;
+  transition: background 1s ease;
+}
+
+/* =========================
+   Header e Menu
+   ========================= */
+.cabeça p {
+  margin-left: 10px;
+  font-weight: 500;
+  color: #6b0b0b; /* cor do texto do header */
+}
+
+.nav li {
+  margin-right: 20px;
+}
+
+.cabeça .nav-link {
+  color: #631616;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.cabeça .nav-link:hover {
+  color: #000000;
+}
+
+/* =========================
+   Botões
+   ========================= */
+
+/* Botão Login personalizado */
+.login-btn,
+.btn-outline-primary {
+  color: #6b0b0b;
+  border-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover,
+.btn-outline-primary:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Botão Cadastre-se */
+.cadastro-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  transition: all 0.4s ease;
+  animation: pulse 2s infinite;
+}
+
+.cadastro-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Animação pulsante */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+/* Botão Primário (Cadastre-se ou outros) */
+.btn-primary {
+  background-color: #631616;
+  border-color: #631616;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #631616;
+  border-color: #631616;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+}
+
+/* Remover efeito azul ao clicar/focar */
+.btn-primary:focus,
+.btn-outline-primary:focus,
+.btn-primary:active,
+.btn-outline-primary:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* =========================
+   Texto Header Específico
+   ========================= */
+.col-md-3.mb-2.mb-md-0.d-flex.align-items-center p {
+  color: #6b0b0b;
+  font-weight: 500;
+}
+.lead {
+  color: black;
+}
+ul.nav li a {
+  color: #ffffff; /* cor desejada */
+}
+ul.nav li a:hover {
+  color: #ffd1d1; /* cor ao passar o mouse */
+}
+
+.card-cover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animação suave */
+  cursor: pointer;
+  z-index: 1; /* garante que ele esteja na frente quando expandir */
+}
+
+.card-cover:hover {
+  transform: scale(1.05); /* aumenta 5% */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* sombra mais forte */
+  z-index: 10; /* coloca sobre os outros elementos */
+}
+
+/* Espaçamento entre os botões */
+.botoes-container button {
+  margin-right: 15px; /* espaço entre os botões horizontal */
+}
+
+/* Remove margem do último botão */
+.botoes-container button:last-child {
+  margin-right: 0;
+}
+
+/* Para mobile (grid) vertical, colocar espaçamento abaixo */
+@media (max-width: 576px) {
+  .botoes-container button {
+    margin-right: 0;
+    margin-bottom: 10px; /* espaço vertical */
+  }
+  
+  .botoes-container button:last-child {
+    margin-bottom: 0;
+  }
 }
