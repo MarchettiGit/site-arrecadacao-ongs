@@ -1,0 +1,145 @@
+/* ================================================
+   BASE.CSS - Estilos Globais do Projeto DoaBem
+   Compatível com Bootstrap
+   ================================================ */
+
+/* ======= 🎨 VARIÁVEIS DE COR E FONTES ======= */
+:root {
+  --cor-primaria: #631616;
+  --cor-secundaria: #6b0b0b;
+  --cor-fundo: #ffffff;
+  --cor-texto: #212529;
+  --cor-escura: #000000;
+  --cor-sucesso: #28a745;
+  --cor-erro: #dc3545;
+  --cor-hover: #ffd1d1;
+
+  --fonte-principal: "Poppins", Arial, sans-serif;
+  --transicao-padrao: 0.3s ease-in-out;
+}
+
+/* ======= 🔤 RESET E BASE ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  overflow-x: hidden;
+}
+
+/* Links padrão */
+a {
+  text-decoration: none;
+  color: var(--cor-secundaria);
+  transition: color var(--transicao-padrao);
+}
+
+a:hover {
+  color: var(--cor-hover);
+}
+
+/* ======= 🧱 CABEÇALHO PADRÃO ======= */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+header .nav-link {
+  font-weight: 500;
+  color: var(--cor-primaria);
+  transition: color var(--transicao-padrao);
+}
+
+header .nav-link:hover {
+  color: var(--cor-escura);
+}
+
+/* ======= 🔘 BOTÕES PADRÃO ======= */
+.btn {
+  border-radius: 8px;
+  transition: all var(--transicao-padrao);
+}
+
+/* Botão primário */
+.btn-primary {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+.btn-primary:hover {
+  background-color: var(--cor-secundaria);
+  border-color: var(--cor-secundaria);
+  transform: scale(1.05);
+}
+
+/* Botão contornado */
+.btn-outline-primary {
+  color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--cor-primaria);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ======= 💬 FORMULÁRIOS ======= */
+input, textarea, select {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 10px 12px;
+  width: 100%;
+  transition: border var(--transicao-padrao);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--cor-primaria);
+  outline: none;
+  box-shadow: 0 0 0 .25rem rgba(99, 22, 22, .25);
+}
+
+/* ======= 🧩 CONTAINERS E SEÇÕES ======= */
+section {
+  padding: 60px 0;
+}
+
+.container-custom {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ======= 📱 RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+  header .nav-link {
+    padding: 8px 10px;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  .container-custom {
+    width: 95%;
+  }
+}
+
+/* ======= 🧭 FOOTER ======= */
+footer {
+  background-color: #fff;
+  color: var(--cor-secundaria);
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+}
+
+/* ======= ✨ ANIMAÇÕES AOS PADRÃO ======= */
+[data-aos] {
+  transition: transform 1s ease, opacity 1s ease;
+}
