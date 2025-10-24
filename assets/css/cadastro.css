@@ -1,0 +1,55 @@
+
+
+body {
+  background: linear-gradient(180deg, #ffffff 50%, #631616);
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Centralizar o formulário na tela */
+.cadastro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Caixa do formulário */
+.form-box {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #631616;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Botão */
+.btn-primary {
+  background-color: #631616;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #8b1e1e;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(99, 22, 22, 0.5);
+}
+
+/* Links e texto */
+a {
+  text-decoration: none;
+  color: #631616;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #000;
+}
