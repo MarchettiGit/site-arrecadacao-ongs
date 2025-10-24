@@ -4,10 +4,6 @@ Projeto avaliativo M2 – Site de arrecadação para ONGs.
 
 Projeto desenvolvido para a avaliação da M2.
 
-## 👥 Integrantes
-- Murilo Perozini Marchetti – RGM: XXXXXXX
-- [Nome do seu duo] – RGM: XXXXXXX
-
 ## 💡 Objetivo
 Facilitar a arrecadação de recursos para ONGs por meio de uma plataforma simples e intuitiva.
 
