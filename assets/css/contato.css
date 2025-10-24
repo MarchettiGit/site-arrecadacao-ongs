@@ -1,26 +1,44 @@
-.feature-icon {
-  width: 4rem;
-  height: 4rem;
-  border-radius: .75rem;
+/* ================================================
+   CONTATO.CSS - Estilos específicos da página Contato
+   ================================================ */
+
+main {
+  text-align: center;
 }
 
-.icon-square {
-  width: 3rem;
-  height: 3rem;
-  border-radius: .75rem;
+h1 {
+  color: var(--cor-primaria);
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
-.text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
-.text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
-
-.card-cover {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+p.lead {
+  font-size: 1.1rem;
+  color: #555;
 }
 
-.feature-icon-small {
-  width: 3rem;
-  height: 3rem;
+form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form .form-label {
+  font-weight: 500;
+  color: var(--cor-primaria);
+}
+
+form .btn {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  form {
+    padding: 20px;
+  }
 }
