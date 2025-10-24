@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doações</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/doacao.css">
+</head>
+<body class="bg-light">
+<header class="cabeça d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" data-aos="fade-down">
+    <div class="col-md-3 mb-2 mb-md-0 d-flex align-items-center"> 
+      <a href="index.html" class="d-inline-flex text-decoration-none">
+        <div class="logo_header"><img src="assets/img/Header/unnamed.jpg" alt="Logo" width="100"></div>
+      </a>
+      <p class="paragrafo-header">Bem vindo de volta!</p>
+    </div>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="index.html" class="nav-link px-5">Início</a></li>
+      <li><a href="doacoes.html" class="nav-link px-5">Doações</a></li>
+      <li><a href="contato.html" class="nav-link px-5">Contato</a></li>
+      <li><a href="sobre.html" class="nav-link px-5">Sobre</a></li>
+    </ul>
+  </header>
+<main class="container py-5">
+
+    <h1 class="text-center mb-4">Faça sua Doação 💖</h1>
+
+    <!-- Botão para abrir o formulário -->
+    <div class="text-center mb-4">
+      <button id="abrirForm" class="btn btn-primary btn-lg">Fazer uma Doação</button>
+    </div>
+
+    <!-- Formulário escondido -->
+    <div id="formDoacao" class="card p-4 shadow-lg mx-auto" style="max-width: 600px; display: none;">
+      <h3 class="text-center mb-3">Preencha suas informações</h3>
+      <form>
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome completo</label>
+          <input type="text" id="nome" name="nome" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="cpf" class="form-label">CPF</label>
+          <input type="text" id="cpf" name="cpf" class="form-control" placeholder="000.000.000-00" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="ong" class="form-label">Selecione a ONG</label>
+          <select id="ong" name="ong" class="form-select" required>
+            <option value="" selected disabled>Escolha uma ONG</option>
+            <option value="ampara">AMPARA</option>
+            <option value="graac">GRAAC</option>
+            <option value="sosmata">SOS Mata Atlântica</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="valor" class="form-label">Valor da Doação (R$)</label>
+          <input type="number" id="valor" name="valor" class="form-control" placeholder="Digite o valor" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Forma de Pagamento</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pagamento" id="pix" value="pix" required>
+            <label class="form-check-label" for="pix">Pix</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pagamento" id="credito" value="credito" required>
+            <label class="form-check-label" for="credito">Cartão de Crédito</label>
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-success">Confirmar Doação</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Tabela de doações -->
+    <section class="mt-5">
+      <h2 class="text-center mb-3">Minhas Doações</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle">
+          <thead class="table-primary">
+            <tr>
+              <th>Nome</th>
+              <th>ONG</th>
+              <th>Valor (R$)</th>
+              <th>Forma de Pagamento</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>João Silva</td>
+              <td>GRAAC</td>
+              <td>50,00</td>
+              <td>Pix</td>
+              <td>
+                <button class="btn btn-warning btn-sm">Editar</button>
+                <button class="btn btn-danger btn-sm">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+</main>
+
+  <script>
+    const btnAbrir = document.getElementById("abrirForm");
+    const form = document.getElementById("formDoacao");
+
+    btnAbrir.addEventListener("click", () => {
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    });
+  </script>
+</body>
+</html>
