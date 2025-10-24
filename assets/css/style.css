@@ -210,3 +210,6 @@ ul.nav li a:hover {
     margin-bottom: 0;
   }
 }
+.logo_header :hover{
+  transform: scale(0.8);
+}
