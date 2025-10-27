@@ -27,9 +27,10 @@
 
 body {
   font-family: var(--fonte-principal);
-  background-color: var(--cor-fundo);
+  background: linear-gradient(180deg, #ffffff 50%, #631616);
   color: var(--cor-texto);
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* Links padrão */
@@ -56,7 +57,7 @@ header .nav-link {
 }
 
 header .nav-link:hover {
-  color: var(--cor-escura);
+  color: white;
 }
 
 /* ======= 🔘 BOTÕES PADRÃO ======= */
@@ -130,13 +131,60 @@ section {
   }
 }
 
-/* ======= 🧭 FOOTER ======= */
+/* ======= 🧭 FOOTER CORRIGIDO ======= */
 footer {
-  background-color: #fff;
-  color: var(--cor-secundaria);
+  background-color: var(--cor-primaria);
+  color: #fff;
   text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid #ddd;
+  padding: 40px 20px;
+  border-top: 1px solid #444;
+}
+
+footer a {
+  color: #fff !important;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ddd !important;
+}
+
+footer .nav-link {
+  color: #fff !important;
+}
+
+footer .nav-link:hover {
+  color: #ddd !important;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.footer-buttons button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all var(--transicao-padrao);
+}
+
+.footer-buttons button:hover {
+  background-color: white;
+  color: #222;
+  transform: scale(1.05);
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #aaa;
 }
 
 /* ======= ✨ ANIMAÇÕES AOS PADRÃO ======= */
@@ -144,49 +192,16 @@ footer {
   transition: transform 1s ease, opacity 1s ease;
 }
 
-
-body {
-  background-color: #f5f7fa;
-  font-family: "Poppins", sans-serif;
+@media (min-width: 992px) {
+  .rounded-lg-3 { border-radius: .3rem; }
 }
 
-h1, h2 {
-  font-weight: 600;
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-#abrirForm {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#abrirForm:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
-}
-
-#formDoacao {
-  border-radius: 15px;
-  background-color: #fff;
-}
-
-.btn-success {
-  background-color: #28a745;
-  border: none;
-}
-
-.btn-success:hover {
-  background-color: #218838;
-}
-
-.table {
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.table th {
-  text-align: center;
-}
-
-.table td {
-  text-align: center;
-  vertical-align: middle;
+main {
+  flex: 1;
 }
