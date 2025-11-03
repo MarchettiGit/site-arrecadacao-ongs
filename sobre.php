@@ -57,7 +57,7 @@
         <button type="button" onclick="window.location.href='cadastro.php'" class="btn btn-primary btn-lg px-4 me-md-2">
           Faça seu cadastro agora!
         </button>
-        <button type="button" onclick="window.location.href='contato.php'" class="btn btn-outline-secondary btn-lg px-4">
+        <button type="button" onclick="window.location.href='contato.php'" class="btn btn-outline-light btn-lg px-4">
           Nosso Contato!
         </button>
       </div>
