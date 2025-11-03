@@ -39,7 +39,7 @@ session_start();
     </ul>
 
     <!-- Botões -->
-    <div class="cadastro col-md-3 text-end">
+    <div class="cadastro col-md-3 text-end ">
       <button onclick="window.location.href='login.php'" type="button" class="btn btn-light me-2">
         Login
       </button>
@@ -63,7 +63,7 @@ session_start();
         Escolha uma causa que toque o seu coração e descubra como pequenos gestos podem gerar grandes transformações.
       </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center botoes-container">
-  <button type="button" onclick="window.location.href='doacoes.php'"  class="btn btn-primary btn-lg px-4">
+  <button type="button" onclick="window.location.href='login.php'"  class="btn btn-primary btn-lg px-4">
     DOE AGORA MESMO!
   </button>
   <button type="button" onclick="window.location.href='sobre.php'" class="btn btn-outline-secondary btn-lg px-4">
@@ -168,3 +168,4 @@ session_start();
   </script>
 </body>
 </html>
+    

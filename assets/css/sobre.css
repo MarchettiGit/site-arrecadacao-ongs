@@ -95,34 +95,7 @@ body {
   0% { box-shadow: 0 0 0 0 rgba(40,167,69,0.6); }
   70% { box-shadow: 0 0 0 10px rgba(40,167,69,0); }
   100% { box-shadow: 0 0 0 0 rgba(40,167,69,0); }
-}
-
-/* ========================= FORMULÁRIO ========================= */
-#formDoacao {
-  border-radius: 15px;
-  background-color: #fff;
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: all 0.3s ease-in-out;
-  color: black;
-}
-
-#formDoacao.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-input, select {
-  border-radius: 6px;
-  border: 1px solid #ced4da;
-  padding: 10px;
-  width: 100%;
-}
-
-.formsdoa{
-  color: black;
-}
-select{ 
-  border-radius: 30px;
+}.sobrelink{
+  color: #ffffff;
 }
 

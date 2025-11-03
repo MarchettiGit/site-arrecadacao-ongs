@@ -46,14 +46,14 @@ body {
 /* Links e texto */
 a {
   text-decoration: none;
-  color: #631616;
+  color: #ffffff;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #000;
+  color: #ff9898;
 }
 
 .logo_header :hover{
   transform: scale(0.8);
-}
+} 
