@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +18,7 @@
   <header class="cabeça d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" data-aos="fade-down">
     <!-- Logo -->
     <div class="col-md-3 mb-2 mb-md-0 d-flex align-items-center">
-      <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+      <a href="index.php" class="d-inline-flex link-body-emphasis text-decoration-none">
         <div class="logo_header"><img src="assets/img/Header/unnamed.jpg" alt="Logo do site" width="100" height="auto"></div>
       </a>
       <p class="paragrafo-header">Escolha uma causa, faça sua parte. Sua doação muda vidas!</p>
@@ -21,18 +26,24 @@
 
     <!-- Menu -->
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><a href="index.html" class="nav-link px-5 link-secondary">Início</a></li>
-      <li><a href="doacoes.html" class="nav-link px-5">Doações</a></li>
-      <li><a href="contato.html" class="nav-link px-5">Contato</a></li>
-      <li><a href="sobre.html" class="nav-link px-5">Sobre</a></li>
+      <li><a href="index.php" class="nav-link px-5 link-secondary">Início</a></li>
+      <li>
+        <?php if (isset($_SESSION['email']) && isset($_SESSION['senha'])): ?>
+          <a href="doacoes.php" class="nav-link px-5">Doações</a>
+        <?php else: ?>
+          <a href="login.php" class="nav-link px-5">Doações</a>
+        <?php endif; ?>
+      </li>
+      <li><a href="contato.php" class="nav-link px-5">Contato</a></li>
+      <li><a href="sobre.php" class="nav-link px-5">Sobre</a></li>
     </ul>
 
     <!-- Botões -->
     <div class="cadastro col-md-3 text-end">
-      <button onclick="window.location.href='login.html'" type="button" class="btn btn-light me-2">
+      <button onclick="window.location.href='login.php'" type="button" class="btn btn-light me-2">
         Login
       </button>
-      <button onclick="window.location.href='cadastro.html'" type="button" class="btn btn-outline-danger">
+      <button onclick="window.location.href='cadastro.php'" type="button" class="btn btn-outline-danger">
         Cadastre-se
       </button>
     </div>
@@ -52,10 +63,10 @@
         Escolha uma causa que toque o seu coração e descubra como pequenos gestos podem gerar grandes transformações.
       </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center botoes-container">
-  <button type="button" onclick="window.location.href='doacoes.html'"  class="btn btn-primary btn-lg px-4">
+  <button type="button" onclick="window.location.href='doacoes.php'"  class="btn btn-primary btn-lg px-4">
     DOE AGORA MESMO!
   </button>
-  <button type="button" onclick="window.location.href='sobre.html'" class="btn btn-outline-secondary btn-lg px-4">
+  <button type="button" onclick="window.location.href='sobre.php'" class="btn btn-outline-secondary btn-lg px-4">
     Sobre Nós!
   </button>
 </div>
@@ -134,16 +145,14 @@
       </a>
       <ul class="nav col-md-4 justify-content-end">
         <li class="nav-item">
-          <a href="index.html" class="nav-link px-2 text-body-secondary">Inicio</a>
+          <a href="index.php" class="nav-link px-2 text-body-secondary">Inicio</a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="contato.php" class="nav-link px-2 text-body-secondary">Contato</a>
         </li>
         <li class="nav-item">
-          <a href="doacoes.html" class="nav-link px-2 text-body-secondary">Doações</a>
-        </li>
-        <li class="nav-item">
-          <a href="contato.html" class="nav-link px-2 text-body-secondary">Contato</a>
-        </li>
-        <li class="nav-item">
-          <a href="sobre.html" class="nav-link px-2 text-body-secondary">Sobre</a>
+          <a href="sobre.php" class="nav-link px-2 text-body-secondary">Sobre</a>
         </li>
       </ul>
     </footer>

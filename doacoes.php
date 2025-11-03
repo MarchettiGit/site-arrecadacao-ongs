@@ -15,6 +15,9 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
 ?>
 
 
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -30,17 +33,20 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
   <!-- ========================= HEADER ========================= -->
   <header class="cabeça d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" data-aos="fade-down">
     <div class="col-md-3 mb-2 mb-md-0 d-flex align-items-center">
-      <a href="index.html" class="d-inline-flex link-body-emphasis text-decoration-none">
+      <a href="index.php" class="d-inline-flex link-body-emphasis text-decoration-none">
         <div class="logo_header"><img src="assets/img/Header/unnamed.jpg" alt="Logo" width="100"></div>
       </a>
       <p class="paragrafo-header">Escolha uma causa, faça sua parte. Sua doação muda vidas!</p>
     </div>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><a href="index.html" class="nav-link px-5 link-secondary">Início</a></li>
-      <li><a href="doacoes.html" class="nav-link px-5">Doações</a></li>
-      <li><a href="contato.html" class="nav-link px-5">Contato</a></li>
-      <li><a href="sobre.html" class="nav-link px-5">Sobre</a></li>
+      <li><a href="index.php" class="nav-link px-5 link-secondary">Início</a></li>
+      <li><a href="doacoes.php" class="nav-link px-5">Doações</a></li>
+      <li><a href="contato.php" class="nav-link px-5">Contato</a></li>
+      <li><a href="sobre.php" class="nav-link px-5">Sobre</a></li>
+      <div class = "d-flex">
+        <a href="backend/sair.php" class = "btn btn-danger">Sair</a>
+      </div>
     </ul>
 
     
@@ -130,10 +136,10 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
   <div class="foter"><footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mt-6">
     <p class="col-md-4 mb-0 text-body-secondary">&copy; UMC</p>
     <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Início</a></li>
-      <li class="nav-item"><a href="doacoes.html" class="nav-link px-2 text-body-secondary">Doações</a></li>
-      <li class="nav-item"><a href="contato.html" class="nav-link px-2 text-body-secondary">Contato</a></li>
-      <li class="nav-item"><a href="sobre.html" class="nav-link px-2 text-body-secondary">Sobre</a></li>
+      <li class="nav-item"><a href="index.php" class="nav-link px-2 text-body-secondary">Início</a></li>
+      
+      <li class="nav-item"><a href="contato.php" class="nav-link px-2 text-body-secondary">Contato</a></li>
+      <li class="nav-item"><a href="sobre.php" class="nav-link px-2 text-body-secondary">Sobre</a></li>
     </ul>
   </footer></div>
 

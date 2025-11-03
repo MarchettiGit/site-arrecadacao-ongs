@@ -18,17 +18,17 @@
     <!-- Navbar -->
     <header class="cabeça d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" data-aos="fade-down">
       <div class="col-md-3 mb-2 mb-md-0 d-flex align-items-center">
-        <a href="index.html" class="d-inline-flex text-decoration-none">
+        <a href="index.php" class="d-inline-flex text-decoration-none">
           <div class="logo_header"><img src="assets/img/Header/unnamed.jpg" alt="Logo" width="100"></div>
         </a>
         <p class="paragrafo-header">Sobre Nós</p>
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="index.html" class="nav-link px-5">Início</a></li>
-        <li><a href="doacoes.html" class="nav-link px-5">Doações</a></li>
-        <li><a href="contato.html" class="nav-link px-5">Contato</a></li>
-        <li><a href="sobre.html" class="nav-link px-5">Sobre</a></li>
+        <li><a href="index.php" class="nav-link px-5">Início</a></li>
+        <li><a href="doacoes.php" class="nav-link px-5">Doações</a></li>
+        <li><a href="contato.php" class="nav-link px-5">Contato</a></li>
+        <li><a href="sobre.php" class="nav-link px-5">Sobre</a></li>
       </ul>
     </header>
 
