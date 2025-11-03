@@ -66,7 +66,7 @@ session_start();
   <button type="button" onclick="window.location.href='login.php'"  class="btn btn-primary btn-lg px-4">
     DOE AGORA MESMO!
   </button>
-  <button type="button" onclick="window.location.href='sobre.php'" class="btn btn-outline-secondary btn-lg px-4">
+  <button type="button" onclick="window.location.href='sobre.php'" class="btn btn-light hover-overlay btn-lg px-4">
     Sobre Nós!
   </button>
 </div>
@@ -168,4 +168,3 @@ session_start();
   </script>
 </body>
 </html>
-    
