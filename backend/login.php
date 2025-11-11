@@ -1,28 +1,35 @@
-<?php 
+<?php
 session_start();
 
 if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
     include_once('conexao.php');
+
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $sql = "SELECT * FROM usuarios WHERE email='$email' AND senha='$senha'";
-    $result = $conn->query($sql);
+    // Consulta para verificar o usuário
+    $sql = "SELECT * FROM usuarios WHERE email=? AND senha=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $email, $senha);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if (mysqli_num_rows($result) < 1) {
-        unset($_SESSION['email']);
-        unset($_SESSION['senha']);
+    if ($result->num_rows < 1) {
+        // Login incorreto
         $_SESSION['erro_login'] = "Usuário ou senha incorretos!";
         header('Location: ../login.php');
         exit();
     } else {
-        $_SESSION['email'] = $email;
-        $_SESSION['senha'] = $senha;
-        $_SESSION['id']  =  $id_usuario; 
-        header('Location: ../doacoes.php');
+        // Login correto
+        $usuario = $result->fetch_assoc(); // pega os dados do usuário
+        $_SESSION['email'] = $usuario['email'];
+        $_SESSION['senha'] = $usuario['senha'];
+        $_SESSION['id'] = $usuario['id']; // importante: agora o ID está definido
+        header('Location: ../doacoes.php'); // redireciona para a página de doações
         exit();
     }
 } else {
+    // Se o formulário não foi enviado corretamente
     header('Location: ../login.php');
     exit();
 }

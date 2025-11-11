@@ -135,8 +135,14 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
                 <?php
                 include("backend/conexao.php");
 
-                $sql = "SELECT nome_completo, nome_ong, valor, forma_pagamento FROM doacoes ORDER BY id DESC";
-                $result = $conn->query($sql);
+                $id_usuario = $_SESSION['id']; // pega o id do usuário logado
+
+                      $sql = "SELECT nome_completo, nome_ong, valor, forma_pagamento FROM doacoes WHERE id_usuario = ? ORDER BY id DESC";
+                      $stmt = $conn->prepare($sql);
+                      $stmt->bind_param("i", $id_usuario);
+                      $stmt->execute();
+                      $result = $stmt->get_result();
+
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
