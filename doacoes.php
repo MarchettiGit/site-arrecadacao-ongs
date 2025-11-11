@@ -55,6 +55,16 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
   <!-- ========================= SEÇÃO DE DOAÇÃO ========================= -->
   <main class="container py-5">
     <h1 class="text-center mb-4 text-dark" data-aos="fade-up">Faça sua Doação 💖</h1>
+    <?php if (isset($_GET['sucesso'])): ?>
+      <div class="alert alert-success text-center" data-aos="fade-up" role="alert">
+        Doação cadastrada com sucesso!
+      </div>
+    <?php elseif (isset($_GET['erro'])): ?>
+      <div class="alert alert-danger text-center" data-aos="fade-up" role="alert">
+        Erro ao cadastrar doação. Tente novamente.
+      </div>
+<?php endif; ?>
+
 
     <div class="text-center mb-4" data-aos="fade-up">
       <button id="abrirForm" class="btn btn-primary btn-lg">Fazer uma Doação</button>
@@ -63,7 +73,7 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
     <!-- FORMULÁRIO TOGGLE -->
     <div id="formDoacao" class="card p-4 shadow-lg mx-auto" style="max-width:600px; " data-aos="fade-up">
       <h3 class="text-center mb-3 text-dark">Preencha suas informações</h3>
-      <form>
+      <form action="backend/inserir.php" method="POST">
         <div class="mb-3">
           <label for="nome" class="form-label text-dark">Nome completo</label>
           <input type="text" id="nome" name="nome" class="form-control" required>
@@ -111,8 +121,8 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
     <section class="mt-5 .bg-danger" data-aos="fade-up">
       <h2 class="text-center mb-3">Minhas Doações</h2>
       <div class="table-responsive">
-        <table class="table table-bordered table-striped align-middle">
-          <thead class="table-primary">
+        <table class="table table-bordered  table-striped align-middle">
+          <thead class="table-primary table-primary">
             <tr>
               <th>Nome</th>
               <th>ONG</th>
@@ -122,11 +132,29 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
             </tr>
           </thead>
           <tbody>
-            <!-- Será preenchido pelo PHP -->
-            <tr>
-              <td colspan="5" class="text-center">Nenhuma doação registrada.</td>
-            </tr>
-          </tbody>
+                <?php
+                include("backend/conexao.php");
+
+                $sql = "SELECT nome_completo, nome_ong, valor, forma_pagamento FROM doacoes ORDER BY id DESC";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                                <td>{$row['nome_completo']}</td>
+                                <td>{$row['nome_ong']}</td>
+                                <td>R$ " . number_format($row['valor'], 2, ',', '.') . "</td>
+                                <td>{$row['forma_pagamento']}</td>
+                                <td><button class='btn btn-sm btn-danger'>Excluir</button></td>
+                              </tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='5' class='text-center'>Nenhuma doação registrada.</td></tr>";
+                }
+
+$conn->close();
+?>
+</tbody>
         </table>
       </div>
     </section>

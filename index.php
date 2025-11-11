@@ -39,14 +39,24 @@ session_start();
     </ul>
 
     <!-- Botões -->
-    <div class="cadastro col-md-3 text-end ">
-      <button onclick="window.location.href='login.php'" type="button" class="btn btn-light me-2">
-        Login
-      </button>
-      <button onclick="window.location.href='cadastro.php'" type="button" class="btn btn-outline-danger">
-        Cadastre-se
-      </button>
-    </div>
+    <div class="cadastro col-md-3 text-end">
+  <?php if (isset($_SESSION['email']) && isset($_SESSION['senha'])): ?>
+    <span class="text-dark me-3 fw-bold">
+      👋 Olá, <?php echo explode('@', $_SESSION['email'])[0]; ?>
+    </span>
+    <button onclick="window.location.href='backend/sair.php'" type="button" class="btn btn-danger">
+      Sair
+    </button>
+  <?php else: ?>
+    <button onclick="window.location.href='login.php'" type="button" class="btn btn-light me-2">
+      Login
+    </button>
+    <button onclick="window.location.href='cadastro.php'" type="button" class="btn btn-outline-danger">
+      Cadastre-se
+    </button>
+  <?php endif; ?>
+</div>
+
   </header>
 
   <!-- =========================
