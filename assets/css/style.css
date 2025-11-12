@@ -1,6 +1,12 @@
 /* =========================
    Form Controls
    ========================= */
+
+   html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
    .form-control-dark {
     border-color: var(--bs-gray);
   }
@@ -66,11 +72,14 @@
      Body e Background
      ========================= */
   body {
-    background: linear-gradient(180deg, #ffffff 50%, #631616);
-    color: white;
-    border: none;
-    transition: background 1s ease;
-  }
+  background: linear-gradient(180deg, #ffffff 0%, #631616 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
   
   /* =========================
      Header e Menu
