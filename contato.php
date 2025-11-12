@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <!-- CSS personalizado -->
-     <link rel="stylesheet" href="assets/css/BASE.css">
+     
     <link rel="stylesheet" href="assets/css/contato.css">
   </head>
 
@@ -26,7 +26,12 @@
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="index.php" class="nav-link px-5">Início</a></li>
-        <li><a href="doacoes.php" class="nav-link px-5">Doações</a></li>
+        <li>
+        <?php if (isset($_SESSION['email']) && isset($_SESSION['senha'])): ?>
+          <a href="doacoes.php" class="nav-link px-5">Doações</a>
+        <?php else: ?>
+          <a href="login.php" class="nav-link px-5">Doações</a>
+        <?php endif; ?>
         <li><a href="contato.php" class="nav-link px-5">Contato</a></li>
         <li><a href="sobre.php" class="nav-link px-5">Sobre</a></li>
       </ul>
