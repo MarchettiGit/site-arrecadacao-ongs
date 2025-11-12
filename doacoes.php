@@ -137,7 +137,7 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
 
                 $id_usuario = $_SESSION['id']; // pega o id do usuário logado
 
-                      $sql = "SELECT nome_completo, nome_ong, valor, forma_pagamento FROM doacoes WHERE id_usuario = ? ORDER BY id DESC";
+                      $sql = "SELECT  id, nome_completo, nome_ong, valor, forma_pagamento FROM doacoes WHERE id_usuario = ? ORDER BY id DESC";
                       $stmt = $conn->prepare($sql);
                       $stmt->bind_param("i", $id_usuario);
                       $stmt->execute();
@@ -147,16 +147,30 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>
-                                <td>{$row['nome_completo']}</td>
-                                <td>{$row['nome_ong']}</td>
-                                <td>R$ " . number_format($row['valor'], 2, ',', '.') . "</td>
-                                <td>{$row['forma_pagamento']}</td>
-                                <td><button class='btn btn-sm btn-danger'>Excluir</button></td>
-                              </tr>";
+                            <td>{$row['nome_completo']}</td>
+                            <td>{$row['nome_ong']}</td>
+                            <td>R$ " . number_format($row['valor'], 2, ',', '.') . "</td>
+                            <td>{$row['forma_pagamento']}</td>
+                            <td class='d-flex justify-content-center'>
+                                
+                                <!-- Botão de Excluir -->
+                                <form action='backend/excluir.php' method='POST' style='display:inline;'>
+                                   <input type='hidden' name='id' value='{$row['id']}'>
+                                    <button type='submit' class='btn btn-sm btn-danger me-2 mr-3'>Excluir</button>
+                                </form>
+                    
+                                <!-- Botão de Atualizar -->
+                                <form action='backend/atualizar.php' method='GET' style='display:inline;'>
+                                    <input type='hidden' name='id' value='{$row['id']}'>
+                                    <button type='submit' class='btn btn-sm btn-info'>Atualizar</button>
+                               </form>
+                            </td>
+                        </tr>";
                     }
-                } else {
-                    echo "<tr><td colspan='5' class='text-center'>Nenhuma doação registrada.</td></tr>";
-                }
+} else {
+    echo "<tr><td colspan='5' class='text-center'>Nenhuma doação registrada.</td></tr>";
+}
+
 
 $conn->close();
 ?>

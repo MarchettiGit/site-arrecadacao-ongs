@@ -3,19 +3,22 @@ include("conexao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
+    $valor = $_POST['valor'];
+    $forma_pagamento = $_POST['forma_pagamento'];
 
-    $sql = "DELETE FROM doacoes WHERE id = $id";
+    $sql = "UPDATE doacoes SET valor = '$valor', forma_pagamento = '$forma_pagamento' WHERE id = $id";
 
     if ($conn->query($sql) === TRUE) {
         echo "<script>
-                alert('Doação excluída com sucesso!');
+                alert('Doação atualizada com sucesso!');
                 window.location.href = '../doacoes.php';
               </script>";
     } else {
         echo "<script>
-                alert('Erro ao excluir a doação!');
+                alert('Erro ao atualizar a doação!');
                 window.location.href = '../doacoes.php';
               </script>";
     }
 }
 ?>
+    
