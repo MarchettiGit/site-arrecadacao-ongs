@@ -9,10 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE doacoes SET valor = '$valor', forma_pagamento = '$forma_pagamento' WHERE id = $id";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<script>
-                alert('Doação atualizada com sucesso!');
-                window.location.href = '../doacoes.php';
-              </script>";
+        header('Location: ../doacoes.php');
     } else {
         echo "<script>
                 alert('Erro ao atualizar a doação!');

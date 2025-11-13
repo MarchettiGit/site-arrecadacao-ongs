@@ -14,8 +14,9 @@ session_start();
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <!-- CSS principal + CSS específico -->
+   <link rel="stylesheet" href="assets/css/cadastro_login.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/cadastro_login.css">
+  
 
   <link rel="shortcut icon" href="assets/img/unnamed-removebg-preview.ico" type="image/x-icon">
 </head>
@@ -44,7 +45,7 @@ session_start();
   </header>
 
   <!-- Corpo da página -->
-  <main class="cadastro-container" data-aos="fade-up">
+  <main class="cadastro-container text-dark" data-aos="fade-up">
     <div class="form-box shadow-lg">
       <form action="backend/login.php" method="POST"> 
         <h2 class="text-center mb-4">Entre na sua conta</h2>

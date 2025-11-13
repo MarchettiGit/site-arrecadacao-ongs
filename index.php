@@ -63,8 +63,8 @@ session_start();
        Seção de Texto com Imagem
        ========================= -->
   <div class="px-5 py-5 my-5 text-center" data-aos="fade-up">
-    <img class="d-block mx-auto mb-4" src="assets/img/Header/unnamed.jpg" alt="Imagem pequena" width="332" height="auto">
-    <h1 class="display-5 fw-bold text-body-emphasis">Faça parte da mudança que o mundo precisa.</h1>
+    <img class="d-block mx-auto mb-4" src="assets/img/Header/heartred.png" alt="Imagem pequena" width="332" height="auto">
+    <h1 class="display-5 fw-bold text-body-emphasis text-dark">Faça parte da mudança que o mundo precisa.</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">
         Nosso objetivo é aproximar quem quer fazer o bem de quem realmente precisa.

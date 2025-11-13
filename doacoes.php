@@ -119,11 +119,11 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
 
     <!-- TABELA DE DOAÇÕES -->
     <section class="mt-5 .bg-danger" data-aos="fade-up">
-      <h2 class="text-center mb-3">Minhas Doações</h2>
-      <div class="table-responsive">
-        <table class="table table-bordered  table-striped align-middle">
-          <thead class="table-primary table-primary">
-            <tr>
+      <h2 class="text-center mb-3 text-dark">Minhas Doações</h2>
+      <div class="table-responsive ">
+        <table class="table    table-striped align-middle">
+          <thead class="table-dark table-primary">
+            <tr class=''>
               <th>Nome</th>
               <th>ONG</th>
               <th>Valor (R$)</th>
@@ -131,7 +131,7 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
               <th>Ações</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-light">
                 <?php
                 include("backend/conexao.php");
 
@@ -146,8 +146,8 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                            <td>{$row['nome_completo']}</td>
+                        echo "<tr class='text-dark'>
+                            <td >{$row['nome_completo']}</td>
                             <td>{$row['nome_ong']}</td>
                             <td>R$ " . number_format($row['valor'], 2, ',', '.') . "</td>
                             <td>{$row['forma_pagamento']}</td>

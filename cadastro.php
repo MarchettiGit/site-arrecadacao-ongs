@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <!-- CSS principal + CSS específico -->
-  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/cadastro_login.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
 
   <link rel="shortcut icon" href="assets/img/unnamed-removebg-preview.ico" type="image/x-icon">
 </head>
@@ -39,33 +40,33 @@
   <!-- Corpo da página -->
   <main class="cadastro-container" data-aos="fade-up">
     <div class="form-box shadow-lg">
-      <h2 class="text-center mb-4">Crie sua conta</h2>
+      <h2 class="text-center mb-4 text-dark">Crie sua conta</h2>
       <form action="backend/cadastrar_usuario.php" method="POST">
-        <div class="form-group mb-3">
+        <div class="form-group mb-3 text-dark">
           <label for="nome">Nome completo</label>
           <input type="text" id="nome" name="nome" class="form-control" required>
         </div>
 
         
-        <div class="mb-3">
+        <div class="mb-3 ">
           <label for="cpf" class="form-label text-dark">CPF</label>
           <input type="text" id="cpf" name="cpf" class="form-control" placeholder="000.000.000-00" required>
         </div>
 
-        <div class="form-group mb-3">
+        <div class="form-group mb-3 text-dark">
           <label for="email">E-mail</label>
           <input type="email" id="email" name="email" class="form-control" required>
         </div>
 
 
-        <div class="form-group mb-4">
+        <div class="form-group mb-4 text-dark">
           <label for="senha">Senha</label>
           <input type="password" id="senha" name="senha" class="form-control" required>
         </div>
 
         <button type="submit"  name="submit" class="btn btn-primary w-100">Cadastrar</button>
 
-        <p class="text-center mt-3">Já tem uma conta? 
+        <p class="text-center mt-3 text-dark">Já tem uma conta? 
           <a href="login.php" class="text-danger">Entrar</a>
         </p>
       </form>
