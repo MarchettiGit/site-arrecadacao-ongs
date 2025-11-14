@@ -168,7 +168,7 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
                         </tr>";
                     }
 } else {
-    echo "<tr><td colspan='5' class='text-center'>Nenhuma doação registrada.</td></tr>";
+    echo "<tr><td colspan='5' class='text-center text-dark'>Nenhuma doação registrada.</td></tr>";
 }
 
 
