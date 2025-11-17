@@ -36,7 +36,7 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
       <a href="index.php" class="d-inline-flex link-body-emphasis text-decoration-none">
         <div class="logo_header"><img src="assets/img/Header/unnamed.jpg" alt="Logo" width="100"></div>
       </a>
-      <p class="paragrafo-header">Escolha uma causa, faça sua parte. Sua doação muda vidas!</p>
+      <p class="paragrafo-header col-12">Escolha uma causa, faça sua parte. Sua doação muda vidas!</p>
     </div>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
@@ -45,7 +45,7 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
       <li><a href="contato.php" class="nav-link px-5">Contato</a></li>
       <li><a href="sobre.php" class="nav-link px-5">Sobre</a></li>
       <div class = "d-flex">
-        <a href="backend/sair.php" class = "btn btn-danger">Sair</a>
+        <a href="backend/sair.php" class = "btn btn-danger row ">Sair</a>
       </div>
     </ul>
 
@@ -144,30 +144,65 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
                       $result = $stmt->get_result();
 
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr class='text-dark'>
-                            <td >{$row['nome_completo']}</td>
-                            <td>{$row['nome_ong']}</td>
-                            <td>R$ " . number_format($row['valor'], 2, ',', '.') . "</td>
-                            <td>{$row['forma_pagamento']}</td>
-                            <td class='d-flex justify-content-center'>
-                                
-                                <!-- Botão de Excluir -->
-                                <form action='backend/excluir.php' method='POST' style='display:inline;'>
-                                   <input type='hidden' name='id' value='{$row['id']}'>
-                                    <button type='submit' class='btn btn-sm btn-danger me-2 mr-3'>Excluir</button>
-                                </form>
-                    
-                                <!-- Botão de Atualizar -->
-                                <form action='backend/atualizar.php' method='GET' style='display:inline;'>
-                                    <input type='hidden' name='id' value='{$row['id']}'>
-                                    <button type='submit' class='btn btn-sm btn-info'>Atualizar</button>
-                               </form>
-                            </td>
-                        </tr>";
-                    }
-} else {
+                 if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+
+        $img = "";
+
+        if ($row['nome_ong'] == "graac") {
+            $img = "assets/img/Cards/GRAAC.jpg";
+        } elseif ($row['nome_ong'] == "sosmata") {
+            $img = "assets/img/Cards/mata_icon.png";
+        } elseif ($row['nome_ong'] == "ampara") {
+            $img = "assets/img/Cards/institutoamparanimal_logo.jpg";
+        }
+
+        
+        $imgPagamento = "";
+
+        if (strtolower($row['forma_pagamento']) == "pix") {
+            $imgPagamento = "assets/img/Cards/pix.png";
+        } elseif (strtolower($row['forma_pagamento']) == "credito") {
+            $imgPagamento = "assets/img/Cards/cartao.png";
+        }
+
+        echo "<tr class='text-dark'>
+                <td data-aos='fade-up'>{$row['nome_completo']}</td>
+
+                <!-- Coluna da ONG com imagem -->
+                <td data-aos='fade-up'>
+                    <img src='{$img}' alt='{$row['nome_ong']}' style='width:40px; height:40px; object-fit:contain; margin-right:5px;'>
+                    {$row['nome_ong']}
+                </td>
+
+                <!-- Valor -->
+                <td data-aos='fade-up'>R$ " . number_format($row['valor'], 2, ',', '.') . "</td>
+
+                <!-- Forma de pagamento com imagem -->
+                <td data-aos='fade-up'>
+                    <img src='{$imgPagamento}' alt='{$row['forma_pagamento']}' style='width:35px; height:35px; object-fit:contain; margin-right:5px;'>
+                    {$row['forma_pagamento']}
+                </td>
+
+                <td class='d-flex justify-content-center' data-aos='fade-up'>
+                    <!-- Botão de Excluir -->
+                    <form action='backend/excluir.php' method='POST' style='display:inline;'>
+                        <input type='hidden' name='id' value='{$row['id']}'>
+                        <button type='submit' class='btn btn-sm btn-danger me-2 mr-3'>Excluir</button>
+                    </form>
+
+                    <!-- Botão de Atualizar -->
+                    <form action='backend/atualizar.php' method='GET' style='display:inline;'>
+                        <input type='hidden' name='id' value='{$row['id']}'>
+                        <button type='submit' class='btn btn-sm btn-info'>Atualizar</button>
+                    </form>
+                </td>
+            </tr>";
+    }
+}
+
+
+ else {
     echo "<tr><td colspan='5' class='text-center text-dark'>Nenhuma doação registrada.</td></tr>";
 }
 

@@ -21,7 +21,7 @@ session_start();
       <a href="index.php" class="d-inline-flex link-body-emphasis text-decoration-none">
         <div class="logo_header"><img src="assets/img/Header/unnamed.jpg" alt="Logo do site" width="100" height="auto"></div>
       </a>
-      <p class="paragrafo-header">Escolha uma causa, faça sua parte. Sua doação muda vidas!</p>
+      <p class="paragrafo-header ">Escolha uma causa, faça sua parte. Sua doação muda vidas!</p>
     </div>
 
     <!-- Menu -->
