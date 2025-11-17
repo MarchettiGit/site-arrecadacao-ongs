@@ -171,7 +171,7 @@ if ((!isset($_SESSION['email'])) && (!isset($_SESSION['senha']))) {
 
                 <!-- Coluna da ONG com imagem -->
                 <td data-aos='fade-up'>
-                    <img src='{$img}' alt='{$row['nome_ong']}' style='width:40px; height:40px; object-fit:contain; margin-right:5px;'>
+                      <img src='{$img}' class='rounded-circle' alt='{$row['nome_ong']}' style='width:40px; height:40px; object-fit:contain; margin-right:5px;'>
                     {$row['nome_ong']}
                 </td>
 
