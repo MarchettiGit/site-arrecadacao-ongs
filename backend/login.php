@@ -24,7 +24,7 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']
         $usuario = $result->fetch_assoc(); // pega os dados do usuário
         $_SESSION['email'] = $usuario['email'];
         $_SESSION['senha'] = $usuario['senha'];
-        $_SESSION['id'] = $usuario['id']; // importante: agora o ID está definido
+        $_SESSION['id'] = $usuario['id']; 
         header('Location: ../doacoes.php'); // redireciona para a página de doações
         exit();
     }
