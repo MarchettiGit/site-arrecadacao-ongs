@@ -12,8 +12,3 @@ Facilitar a arrecadação de recursos para ONGs por meio de uma plataforma simpl
 - PHP, MySQL
 - GitHub e GitHub Desktop
 
-## 🗄️ Estrutura do projeto
-(cole aqui o esquema de pastas que você mostrou)
-
-## 🧩 Banco de Dados
-(cole o diagrama quando tiver pronto)

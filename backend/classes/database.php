@@ -3,7 +3,7 @@ class Database {
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
-    private $dbname = "site_doacoes"; // troque pelo nome real do banco
+    private $dbname = "site_doacoes"; 
 
     protected $conn;
 
