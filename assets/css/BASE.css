@@ -1,9 +1,4 @@
-/* ================================================
-   BASE.CSS - Estilos Globais do Projeto DoaBem
-   Compatível com Bootstrap
-   ================================================ */
 
-/* ======= 🎨 VARIÁVEIS DE COR E FONTES ======= */
 :root {
   --cor-primaria: #631616;
   --cor-secundaria: #6b0b0b;
@@ -18,7 +13,7 @@
   --transicao-padrao: 0.3s ease-in-out;
 }
 
-/* ======= 🔤 RESET E BASE ======= */
+
 * {
   margin: 0;
   padding: 0;
@@ -32,7 +27,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Links padrão */
+
 a {
   text-decoration: none;
   color: var(--cor-secundaria);
@@ -43,7 +38,7 @@ a:hover {
   color: var(--cor-hover);
 }
 
-/* ======= 🧱 CABEÇALHO PADRÃO ======= */
+/* =======  CABEÇALHO PADRÃO ======= */
 header {
   background-color: #fff;
   border-bottom: 1px solid #ddd;
@@ -59,7 +54,7 @@ header .nav-link:hover {
   color: var(--cor-escura);
 }
 
-/* ======= 🔘 BOTÕES PADRÃO ======= */
+/* =======  BOTÕES PADRÃO ======= */
 .btn {
   border-radius: 8px;
   transition: all var(--transicao-padrao);
@@ -89,7 +84,7 @@ header .nav-link:hover {
   transform: scale(1.05);
 }
 
-/* ======= 💬 FORMULÁRIOS ======= */
+/* =======  FORMULÁRIOS ======= */
 input, textarea, select {
   border-radius: 6px;
   border: 1px solid #ced4da;
@@ -104,7 +99,7 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 0 .25rem rgba(99, 22, 22, .25);
 }
 
-/* ======= 🧩 CONTAINERS E SEÇÕES ======= */
+/* =======  CONTAINERS E SEÇÕES ======= */
 section {
   padding: 60px 0;
 }
@@ -115,7 +110,7 @@ section {
   margin: 0 auto;
 }
 
-/* ======= 📱 RESPONSIVIDADE ======= */
+/* =======  RESPONSIVIDADE ======= */
 @media (max-width: 768px) {
   header .nav-link {
     padding: 8px 10px;
@@ -130,7 +125,7 @@ section {
   }
 }
 
-/* ======= 🧭 FOOTER ======= */
+/* =======  FOOTER ======= */
 footer {
   background-color: #fff;
   color: var(--cor-secundaria);
@@ -139,7 +134,7 @@ footer {
   border-top: 1px solid #ddd;
 }
 
-/* ======= ✨ ANIMAÇÕES AOS PADRÃO ======= */
+/* =======  ANIMAÇÕES AOS PADRÃO ======= */
 [data-aos] {
   transition: transform 1s ease, opacity 1s ease;
 }
